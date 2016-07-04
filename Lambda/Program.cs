@@ -221,12 +221,21 @@ namespace Lambda
              * Create a lambda expression which receives two parameters and returns the biggest number
              * and use it to extract the biggest number from numbersList collection.
              */
+            Console.WriteLine();
+            Func<int, int, int> max_function = (a, b) => a > b ? a : b;
+            Console.WriteLine(SpecialFunctions.GetMaxNumber(max_function, numbersList));
+
 
             /**
              * TODO 10 (for home)
              * Use the lambda expression from TODO 9  to sort the collection ascending.
              */
-
+            Console.WriteLine();
+            var sortedNumbers = SpecialFunctions.NumberSort(max_function, numbersList);
+            foreach (var number in sortedNumbers)
+            {
+                Console.WriteLine(number);
+            }
             Console.WriteLine();
         }
 
@@ -258,8 +267,8 @@ namespace Lambda
             //DelegateExample();
             //FuncDelegateExample();
             //AnonymousFunctExample();
-            LambdaExample();
-            //ClosureExample();
+            //LambdaExample();
+            ClosureExample();
 
             Console.ReadKey();
         }

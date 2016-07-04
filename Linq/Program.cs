@@ -28,12 +28,14 @@ namespace Linq
 
         static void Main(string[] args)
         {
-            WhereExample();
+            //WhereExample();
             //SelectExample();
             //SelectManyExample();
             //AggregateExample();
             //GroupByExample();
             //SumMaxMinExample();
+            //OrderByExample();
+            ContainsExample();
 
             Console.ReadKey();
         }
@@ -56,9 +58,9 @@ namespace Linq
 
             //TODO 1: Implement WhereMethod.GetBandsThatStartWithBlack
             Console.WriteLine();
+            Console.WriteLine();
             var bandsThatStartWithBlack = WhereMethod.GetBandsThatStartWithBlack(bandsList);
             WriteBandNames(bandsThatStartWithBlack);
-
             Console.WriteLine();
         }
 
@@ -165,6 +167,22 @@ namespace Linq
             //TODO 6: Implement SumMaxMinMethod.GetNumberOfAlbumsByEnglishBands
             Console.WriteLine($"Number of English albums: {SumMaxMinMethod.GetNumberOfAlbumsByEnglishBands(bandsList)}");
         }
+        private static void OrderByExample()
+        {
+            Console.WriteLine("=====Example 7 (Order by example)=====");
+            var orderSql = OrderByMethod.OrderByNameSql(bandsList);
+            WriteBandNames(orderSql);
+            Console.WriteLine();
+            var orderLinq = OrderByMethod.OrderByNameLinq(bandsList);
+            WriteBandNames(orderLinq);
+
+        }
+        private static void ContainsExample()
+        {
+            Console.WriteLine("=====Example 8 (Contains example)=====");
+            Console.WriteLine(ContainsMethod.Contains(bandsList, bandsList[1]));
+        }
+
 
         #region Helper Methods
 

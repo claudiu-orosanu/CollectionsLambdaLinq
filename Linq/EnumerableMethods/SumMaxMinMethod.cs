@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Linq.EnumerableMethods
@@ -45,7 +46,8 @@ namespace Linq.EnumerableMethods
         // Return the total number of albums released by English bands
         public static int GetNumberOfAlbumsByEnglishBands(List<Band> bandsList)
         {
-            return default(int);
+            return bandsList.Sum(band => band.Country.Equals("england", StringComparison.InvariantCultureIgnoreCase) ?
+                                         band.Albums.Count() : 0);
         }
     }
 }

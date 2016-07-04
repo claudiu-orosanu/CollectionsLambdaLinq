@@ -45,7 +45,9 @@
   <ItemGroup>
     <Compile Include="Entities.cs" />
     <Compile Include="EnumerableMethods\AggregateMethod.cs" />
+    <Compile Include="EnumerableMethods\ContainsMethod.cs" />
     <Compile Include="EnumerableMethods\GroupByMethod.cs" />
+    <Compile Include="EnumerableMethods\OrderByMethod.cs" />
     <Compile Include="EnumerableMethods\SelectManyMethod.cs" />
     <Compile Include="EnumerableMethods\SelectMethod.cs" />
     <Compile Include="EnumerableMethods\SumMaxMinMethod.cs" />

@@ -83,5 +83,42 @@ namespace Lambda.Delegate
             }
             return newList;
         }
+
+        public static int GetMaxNumber(Func<int,int,int> function, List<int> list)
+        {
+            int max = list[0];
+            foreach (var number in list)
+            {
+                max = function(number, max);
+            }
+            return max;
+        }
+
+        public static List<int> NumberSort(Func<int,int,int> function, List<int> list)
+        {
+            int temp;
+            for (int i = 0; i < list.Count; i++)
+            {
+                var swapped = false;
+                for (int j = i + 1; j < list.Count-1; j++)
+                {
+                    if (swapped == false)
+                    {
+                        if (function(list[j], list[j+1]) == list[j])
+                        {
+                            temp = list[j];
+                            list[j] = list[j+1];
+                            list[j+1] = temp;
+                            swapped = true;
+                        }
+                    }
+                    if(swapped)
+                    {
+                        break;
+                    }
+                }
+            }
+            return list;
+        }
     }
 }

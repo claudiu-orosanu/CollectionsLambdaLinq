@@ -17,10 +17,11 @@ namespace Collections
             Country = country;
         }
 
+        // Homework
         public int CompareTo(object obj)
         {
             var band = (Band)obj;
-            return this.StudioAlbums - band.StudioAlbums; //am sortat dupa numarul de albume
+            return StudioAlbums - band.StudioAlbums; //am sortat dupa numarul de albume
         }
     }
 }
