@@ -70,5 +70,18 @@ namespace Lambda.Delegate
             }
             //return newList;
         }
+
+        public static List<int> GetOddNumbers(Func<int,bool> function, List<int> list)
+        {
+            var newList = new List<int>();
+            foreach (var number in list)
+            {
+                if (!function(number))
+                {
+                    newList.Add(number);
+                }
+            }
+            return newList;
+        }
     }
 }

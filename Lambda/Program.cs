@@ -95,6 +95,12 @@ namespace Lambda
              * TODO 7 
              * Create an instance of function created at TODO 2 and use it to print the odd numbers from numbersList collection
              */
+            Console.WriteLine();
+            foreach (var number in SpecialFunctions.GetOddNumbers(SpecialFunctions.CheckEvenNumber, numbersList))
+            {
+                Console.WriteLine(number);
+            }
+            
 
             Console.WriteLine();
         }
@@ -138,7 +144,25 @@ namespace Lambda
              * TODO 8 
              * Create an instance of function created at TODO 2 and use it to print the odd numbers from numbersList collection
              */
+            Console.WriteLine();
+            NumberCheck checkEven_function = delegate (int number)
+             {
+                 return number % 2 == 0;
+             };
 
+            //var sortedNumber = SpecialFunctions.GetEvenNumbers(checkEven_function, numbersList);
+
+            //varianta si mai scurta
+            var sortedNumber = SpecialFunctions.GetEvenNumbers(delegate (int number) { return number % 2 == 0; }, numbersList);
+
+            //lambda expression
+            //var sortedNumber = SpecialFunctions.GetEvenNumbers((number) => (number % 2 == 0), numbersList);
+
+            foreach (var number in sortedNumber)
+            {
+                Console.WriteLine(number);
+            }
+            Console.WriteLine();
             //Omitting the explicit creation of a Func instance
             Console.Write($"{val1} + {val2} = ");
             SpecialFunctions.ExecuteFunctionUsingFunc(delegate (double var1, double var2) { return var1 + var2; },
@@ -231,10 +255,10 @@ namespace Lambda
 
         static void Main(string[] args)
         {
-            DelegateExample();
+            //DelegateExample();
             //FuncDelegateExample();
             //AnonymousFunctExample();
-            //LambdaExample();
+            LambdaExample();
             //ClosureExample();
 
             Console.ReadKey();

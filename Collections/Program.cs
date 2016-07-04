@@ -21,10 +21,10 @@ namespace Collections
 
         static void Main(string[] args)
         {
-            //EnumerableExample();
+            EnumerableExample();
             //YieldExample();
             //CollectionExample();
-            ListExample();
+            //ListExample();
             //DictionaryExample();
             Console.ReadKey();
         }
@@ -37,6 +37,7 @@ namespace Collections
             //Enumerating example
             var bands = new BandsEnumerable(BandsArray);
             var enumerator = bands.GetEnumerator();
+
             while (enumerator.MoveNext())
             {
                 var band = enumerator.Current;
@@ -44,6 +45,11 @@ namespace Collections
             }
 
             //TODO 1: Change "BandsEnumerator" to enumerate from last element to first.
+
+            //indexer
+            Console.WriteLine();
+            Console.WriteLine(bands[2].Name);
+            Console.WriteLine();
         }
 
         private static void YieldExample()
