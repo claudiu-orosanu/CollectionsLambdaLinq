@@ -1,6 +1,8 @@
-﻿namespace Collections
+﻿using System;
+
+namespace Collections
 {
-    public class Band
+    public class Band : IComparable
     {
         public string Name { get; private set; }
         public int StudioAlbums { get; private set; }
@@ -13,6 +15,12 @@
             StudioAlbums = studioAlbums;
             Genre = genre;
             Country = country;
+        }
+
+        public int CompareTo(object obj)
+        {
+            var band = (Band)obj;
+            return this.StudioAlbums - band.StudioAlbums; //am sortat dupa numarul de albume
         }
     }
 }

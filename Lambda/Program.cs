@@ -42,13 +42,21 @@ namespace Lambda
              * Goto SpecialFunctions sources and resolve TODO 1, 2 and 3.
              */
 
+
             //TODO 4: Create an instance of NumberCheck (TODO 1)
+            NumberCheck checkEven_function = new NumberCheck(SpecialFunctions.CheckEvenNumber);
 
             //TODO 5: Use function GetEvenNumbers to select the even numbers from numbersList collection
             List<int> numbersList = new List<int>(new int[] { 0, 1, 2, 6, 8, 9, 21, 24, 10 });
+            var evenNumbers = SpecialFunctions.GetEvenNumbers(checkEven_function, numbersList);
 
             //TODO 6: Print the resulting numbers
-
+            Console.WriteLine();
+            foreach (var item in evenNumbers)
+            {
+                Console.WriteLine(item);
+            }
+            
             Console.WriteLine();
         }
 

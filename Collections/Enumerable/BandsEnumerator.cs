@@ -19,6 +19,7 @@ namespace Collections.Enumerable
         {
             collection = bandsArray;
             //until "MoveNext" is called first time, the enumerator is positioned before the first element
+            currentIndex = collection.Length;
             Reset();
         }
 
@@ -26,9 +27,9 @@ namespace Collections.Enumerable
 
         public bool MoveNext()
         {
-            currentIndex++;
+            currentIndex--;
 
-            if (currentIndex >= collection.Length)
+            if (currentIndex < 0)
             {
                 return false;
             }
@@ -39,7 +40,7 @@ namespace Collections.Enumerable
 
         public void Reset()
         {
-            currentIndex = -1;
+            currentIndex = collection.Length;
             currentBand = null;
         }
     }

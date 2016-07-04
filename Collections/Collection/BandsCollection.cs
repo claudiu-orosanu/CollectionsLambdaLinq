@@ -42,7 +42,12 @@ namespace Collections.Collection
 
         protected override void ClearItems()
         {
-            base.ClearItems();         
+            foreach (var item in Items)
+            {
+                Console.WriteLine($"{item.Name}    {item.Country}");
+            }
+            base.ClearItems();      
+               
         }
     }
 }
