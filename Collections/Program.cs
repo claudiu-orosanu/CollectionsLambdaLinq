@@ -21,10 +21,10 @@ namespace Collections
 
         static void Main(string[] args)
         {
-            EnumerableExample();
+            //EnumerableExample();
             //YieldExample();
             //CollectionExample();
-            //ListExample();
+            ListExample();
             //DictionaryExample();
             Console.ReadKey();
         }

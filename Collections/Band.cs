@@ -2,7 +2,7 @@
 
 namespace Collections
 {
-    public class Band : IComparable
+    public class Band : IComparable<Band>
     {
         public string Name { get; private set; }
         public int StudioAlbums { get; private set; }
@@ -18,9 +18,8 @@ namespace Collections
         }
 
         // Homework
-        public int CompareTo(object obj)
+        public int CompareTo(Band band)
         {
-            var band = (Band)obj;
             return StudioAlbums - band.StudioAlbums; //am sortat dupa numarul de albume
         }
     }

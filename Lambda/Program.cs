@@ -231,8 +231,8 @@ namespace Lambda
              * Use the lambda expression from TODO 9  to sort the collection ascending.
              */
             Console.WriteLine();
-            var sortedNumbers = SpecialFunctions.NumberSort(max_function, numbersList);
-            foreach (var number in sortedNumbers)
+            numbersList.Sort((x, y) => max_function(x, y) == x ? 1 : -1);
+            foreach (var number in numbersList)
             {
                 Console.WriteLine(number);
             }
@@ -267,8 +267,8 @@ namespace Lambda
             //DelegateExample();
             //FuncDelegateExample();
             //AnonymousFunctExample();
-            //LambdaExample();
-            ClosureExample();
+            LambdaExample();
+            //ClosureExample();
 
             Console.ReadKey();
         }
